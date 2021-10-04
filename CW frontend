@@ -1,0 +1,535 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    .container1 { /*feedback container*/
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 22%;
+        height: 50%;
+        padding: 50px;
+        background-color: #a05e2b;
+        border-radius: 10px;
+    }
+
+    .info1 {
+        margin-top: 25px;
+        font-size: 1.2rem;
+        outline: none;
+        height: 80%;
+        width: 90%;
+        border: 2px solid white;
+        border-radius: 4px;
+        padding: 6px;
+        box-shadow: 2px 2px 7px wheat;
+    }
+
+    .profile {
+        font-size: 3rem;
+        color: white;
+    }
+
+     .fa-user-circle { /*PROFILE icon */
+        color: white;
+        font-size: 4rem;
+    }
+
+    .cross { /*cross button*/
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .container { /*login form cont.*/
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 22%;
+        height: 50%;
+        padding: 50px;
+        background-color: #a05e2b;
+        border-radius: 10px;
+    }
+
+    .info { /*input tags*/
+        margin-top: 25px;
+        font-size: 1.2rem;
+        outline: none;
+        width: 90%;
+        border: 2px solid white;
+        border-radius: 4px;
+        padding: 6px;
+        box-shadow: 2px 2px 7px wheat;
+    }
+
+    .sign-in { /*sign in button*/
+        color: #a05e2b;
+        margin-top: 25px;
+        font-size: 1.5rem;
+        outline: none;
+        background-color: white;
+        border: 2px solid white;
+        padding: 7px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px wheat;
+    }
+
+    .sign-in:hover {
+        background-color: #a05e2b;
+        color: goldenrod;
+        border: 2px solid white;
+    }
+
+    .half {/*image and nav bars*/
+        background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,h_842,w_1500,x_0,y_88/v1555006794/shape/mentalfloss/istock-522735736.jpg?itok=NsFp0P-g');
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .bc {/*black color wrap*/
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: black !important;
+        opacity: 0.8;
+    }
+
+    .v-nav-bar1 { /*sign in/up nav*/
+        position: absolute;
+        top: 0px;
+        height: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #a05e2b !important;
+    }
+
+    .v-nav-bar { /*logo, message etc. nav*/
+        position: absolute;
+        top: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: white !important;
+    }
+
+    .logo {
+        padding: 2px 10px 2px 30px;
+        color: #a05e2b;
+        font-size: 40px;
+        font-family: monospace !important;
+    }
+
+    .list1 { /*message, about-us etc. list*/
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .list2 {/* social media list*/
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translate(-50%, -50%);
+    }
+
+    .list3 {/*sign in/up list*/
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: -25px;
+        transform: translate(-50%, -50%);
+    }
+
+    .li4 { /*sign in-up li*/
+        list-style: none;
+        display: flex;
+        font-size: 1.3rem;
+        color: #fff;
+        padding: 10px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .li5 {/*message, about-us etc. li*/
+        list-style: none;
+        display: flex;
+        font-size: 1.3rem;
+        color: #a05e2b;
+        padding: 10px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .li6 { /*socila media icons li*/
+        list-style: none;
+        display: flex;
+        font-size: 1.3rem;
+        color: #a05e2b;
+        padding: 10px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .li5:hover {
+        text-decoration: underline;
+        color: goldenrod;
+    }
+
+    .li6:hover {
+        color: goldenrod;
+    }
+
+    .chi { /*message color*/
+        color: #a05e2b;
+        text-decoration: none;
+    }
+
+    .chi:hover {
+        color: goldenrod;
+    }
+
+    .chi1 { /* sweet message*/
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .cet { /*brand name and btn*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo1 { /*brand name*/
+        font-size: 5rem;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .btn-l { /*sweet message button*/
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        background-color: #a05e2b;
+        padding: 10px;
+        /* border: 2px solid white; */
+        border-radius: 5px;
+    }
+
+    .btn-l:hover {
+        opacity: 0.7;
+    }
+
+    #message { /*boxes section*/
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #a05e2b;
+    }
+
+    .messages { /*boxes div*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .set { /*three boxes*/
+        margin-top: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box { /*single box*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid #fff;
+        border-radius: 90px;
+        /* border: 2px solid #ffc7ba; */
+        box-shadow: 2px 2px 15px wheat;
+        padding: 55px;
+        margin-left: 45px;
+        background-color: #fff;
+        /* background-color: #FFC7BA; */
+        width: 250px;
+        height: 100px;
+    }
+
+    .mes-head { /*h1 tag in box*/
+        font-family: monospace;
+        font-size: 2rem;
+        color: #a05e2b;
+        margin-top: 5px;
+    }
+
+    .appear { /*for login*/
+        display: flex;
+    }
+
+    @media screen and (max-width: 640px) {
+
+        .burger {
+            position: absolute;
+            right: 8px;
+            flex-direction: column;
+            display: block;
+        }
+
+        .line {
+            width: 33px;
+            height: 4px;
+            margin: 2px 5px;
+            background-color: black;
+        }
+
+        .container {
+            width: 45%;
+        }
+
+        .info {
+            font-size: 1rem;
+        }
+
+        .list2 {
+            display: none;
+        }
+
+        .list1 {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 5px;
+            right: 5px;
+            transform: none;
+            z-index: 100;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        #message {
+            height: auto;
+        }
+
+        .messages {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .set {
+            flex-direction: column;
+        }
+
+        .box {
+            border-radius: 0px;
+            margin: 35px !important;
+            width: 35%;
+        }
+
+        .mes-head {
+            font-size: 1rem;
+        }
+
+        .wow {
+            display: flex;
+        }
+
+    }
+</style>
+
+
+<body>
+
+    <section class="header">
+        <!--Includes background image and nav bars-->
+
+        <div class='half'>
+
+            <div class="bc"></div>
+            <!--for black wrap on image-->
+
+            <nav class="v-nav-bar1">
+                <!--sign in and up nav bar-->
+                <ul class="list3">
+                    <li class="li4"><a onclick='justChill()' class="chi1">Sign-in</a></li>
+                    <li class="li4"><a onclick="justChilll()" class="chi1">Feedback</a></li>
+                </ul>
+            </nav>
+
+            <nav class="v-nav-bar">
+                <!--top nav bar-->
+                <h2 class="logo">logo</h2>
+
+                <ul class="list1">
+                    <li class="li5"><a href="#message" class='chi'>Messages</a></li>
+                    <li class="li5">About us</li>
+                    <li class="li5">Shop</li>
+                    <li class="li5">Contact</li>
+                </ul>
+
+                <ul class="list2">
+                    <!--social media icons-->
+                    <li class="li6"><i class='fab fa-facebook-f'></i></li>
+                    <li class="li6"><i class='fab fa-twitter'></i></li>
+                    <li class="li6"><i class="fab fa-instagram"></i></li>
+                </ul>
+
+                <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+            </nav>
+
+            <div class="cet">
+                <!--name and button-->
+                <h1 class='logo1'>Brand Name</h1>
+                <a href='#message' class='btn-l'>Sweet Message</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id='message'>
+        <!--boxes-->
+
+        <div class="messages">
+            <!--upper three-->
+            <div class="set">
+                <div class="box" style="margin-left: 0px;">
+                    <h1 class="mes-head"><i class="far fa-heart"></i></h1>
+                    <h1 class="mes-head">Proposal</h1>
+                    <h1 class="mes-head">Messages</h1>
+                </div>
+                <div class="box">
+                    <a href='/love' class="mes-head"><i class="far fa-grin-hearts"></i></a>
+                    <a href='/love' class="mes-head">Love</a>
+                    <a href='/love' class="mes-head">Messages</a>
+                </div>
+                <div class="box">
+                    <h1 class="mes-head"><i class="far fa-smile"></i></h1>
+                    <h1 class="mes-head">ThankYou</h1>
+                    <h1 class="mes-head">Messages</h1>
+                </div>
+            </div>
+
+            <div class="set">
+                <!--lower three-->
+                <div class="box" style="margin-left: 0px;">
+                    <a class="mes-head"><i class="far fa-sad-tear"></i></a>
+                    <a class="mes-head">Sorry</a>
+                    <a class="mes-head">Messages</a>
+                </div>
+                <div class="box">
+                    <h1 class="mes-head"><i class="far fa-laugh-beam"></i></h1>
+                    <h1 class="mes-head">Appreciation</h1>
+                    <h1 class="mes-head">Messages</h1>
+                </div>
+                <div class="box">
+                    <h1 class="mes-head"><i class="far fa-smile"></i></h1>
+                    <h1 class="mes-head">Congratulation</h1>
+                    <h1 class="mes-head">Messages</h1>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id='login'>
+        <!--login form-->
+        <div class="container">
+            <div class="cross"><i class="fas fa-times" onclick="justChillOne()"></i></div>
+            <!--cross button-->
+            <i class="fas fa-user-circle"></i>
+            <input class='info' name="email" type="email" placeholder="Email address...">
+            <input class='info' name="pass" type="password" placeholder="Password...">
+            <input type="submit" value="Sign-in" class="sign-in">
+        </div>
+    </section>
+
+    <section id='feedback'> <!--feedback section-->
+
+        <div class="container1">
+            <div class="cross"><i class="fas fa-times" onclick="justChilllOne()"></i></div>
+        <form action="/send" method="POST">
+            <h1 style="color: white; font-size: 2rem;">Feedback</h1>
+            <input type="text" class="info1" placeholder="Write here..." name='feed'>
+            <input type="submit" value="Send" class="sign-in">
+        </form>
+        </div>
+    </section>
+
+    <script> //login form appear and cross button script
+        function justChill() {
+            document.querySelector('.container').classList.toggle('appear')
+        }
+
+        function justChillOne() {
+            document.querySelector('.container').classList.toggle('appear')
+        }
+
+        function justChilll() { // for feedback part
+            document.querySelector('.container1').classList.toggle('appear')
+        }
+
+        function justChilllOne() {
+            document.querySelector('.container1').classList.toggle('appear')
+        }
+    </script>
+
+    <script> //burger script
+        var Burger = document.querySelector('.burger');
+        Burger.addEventListener('click', () => {
+            document.querySelector('.list1').classList.toggle('wow');
+            document.querySelector('.list2').classList.toggle('wow');
+
+        })
+    </script>
+
+</body>
